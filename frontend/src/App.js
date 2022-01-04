@@ -1,8 +1,14 @@
+import styled from 'styled-components';
 import React from 'react'
+
+import { Navbar } from './components'
+
 
 const App = () => {
   return (
-    <h1>Hola Mundo!</h1>
+    <div>
+      <Navbar></Navbar>
+    </div>
   )
 }
 
