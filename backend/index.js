@@ -1,35 +1,27 @@
-const express = require('express');
+const express = require('express')
 //comment
-const app = express();
+const app = express()
 
 app.use(express.json())
 
-const { prototype } = require('events')
-const http = require('http')
-
-// const app = http.createServer((request, response) => {
-//   response.writeHead(200, { 'Content-Type': 'text/plain' })
-//   response.end('Connection OK!!')
-// })
-
 let notes = [
   {
-    "id": 1,
-    "content": "Me tengo que suscribir a @midudev",
-    "date": "2022-01-10",
-    "important": true
+    'id': 1,
+    'content': 'Me tengo que suscribir a @midudev',
+    'date': '2022-01-10',
+    'important': true
   },
   {
-    "id": 2,
-    "content": "Tengo que estudiar las clases de FullStack Bootcamp",
-    "date": "2022-01-08",
-    "important": false
+    'id': 2,
+    'content': 'Tengo que estudiar las clases de FullStack Bootcamp',
+    'date': '2022-01-08',
+    'important': false
   },
   {
-    "id": 3,
-    "content": "Repasar los retos de JS de midudev",
-    "date": "2022-01-09",
-    "important": false
+    'id': 3,
+    'content': 'Repasar los retos de JS de midudev',
+    'date': '2022-01-09',
+    'important': false
   }
 ]
 
@@ -67,10 +59,10 @@ app.post('/api/notes', (request, response) => {
   const maxId = Math.max(...ids)
 
   const newNote = {
-    "id": maxId + 1,
-    "content": note.content,
-    "date": new Date().toISOString(),
-    "important": typeof note.important !== 'undefined' ? note.important : false
+    'id': maxId + 1,
+    'content': note.content,
+    'date': new Date().toISOString(),
+    'important': typeof note.important !== 'undefined' ? note.important : false
   }
 
   notes = [ ...notes, newNote ]
@@ -79,7 +71,9 @@ app.post('/api/notes', (request, response) => {
 })
 
 
+app.use(() => console.log('HE ENTRADO AQUI'))
+
 const PORT = 5005
 app.listen(PORT, () => {
-  console.log(`Server running on localhost:${PORT}`);
+  console.log(`Server running on localhost:${PORT}`)
 })
