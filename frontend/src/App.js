@@ -1,15 +1,17 @@
-import styled from 'styled-components';
 import React from 'react'
 
-import { Navbar } from './components'
+import { Layout, Navbar } from './components'
 
 
 const App = () => {
   return (
     <div>
       <Navbar></Navbar>
+      <Layout>
+        lala
+      </Layout>
     </div>
   )
 }
 
-export default App;
+export default App

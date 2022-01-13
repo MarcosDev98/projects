@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import React from 'react'
 
 const MyNavbar = styled.nav`
@@ -17,4 +17,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default Navbar
